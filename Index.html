@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WORLD AI POLICE - by Khan Sahil</title>
+<style>
+body{font-family:Arial;text-align:center;background:#0a1f44;color:white;padding:20px}
+.box{background:white;color:black;padding:20px;border-radius:15px;max-width:500px;margin:auto}
+input{width:90%;padding:12px;border-radius:8px;border:2px solid #0a1f44}
+button{padding:12px 25px;background:#0a1f44;color:white;border:none;border-radius:8px;margin-top:10px;font-weight:bold}
+#result{margin-top:20px;padding:15px;border-radius:10px;font-weight:bold}
+</style>
+</head>
+<body>
+<h1>🚔 WORLD AI POLICE</h1>
+<p>Founder: Khan Sahil | ONLY FOR META</p>
+<div class="box">
+<h3>Pre-Verification Shield Demo</h3>
+<input id="q" placeholder="Type any question... e.g. hack facebook">
+<br><button onclick="check()">Check with Shield</button>
+<div id="result">Result will appear here</div>
+<p style="font-size:12px">Flow: Question -> 3 Checks -> RED/YELLOW/GREEN -> Meta AI</p>
+</div>
+<script>
+function check(){
+ let t=document.getElementById('q').value.toLowerCase();
+ let r=document.getElementById('result');
+ if(t.match(/\d{10,12}|password|otp|aadhar/)){
+   r.innerHTML="🔴 RED BLOCK - Private Data Detected"; r.style.background="#ffc7ce";
+ } else if(t.match(/bomb|kill|hack|weapon|suicide/)){
+   r.innerHTML="🔴 RED BLOCK - Dangerous Intent"; r.style.background="#ffc7ce";
+ } else if(t.match(/bypass|jailbreak|ignore.*instructions/)){
+   r.innerHTML="🟡 YELLOW VERIFY - Human Review Needed"; r.style.background="#ffeb9c";
+ } else {
+   r.innerHTML="🟢 GREEN ALLOW - Safe to send to Meta AI"; r.style.background="#c6efce";
+ }
+}
+</script>
+</body>
+</html>
